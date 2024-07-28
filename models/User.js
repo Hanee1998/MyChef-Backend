@@ -9,7 +9,10 @@ const UserSchema = new mongoose.Schema({
   phone: { type: String },
   country: { type: String },
   city: { type: String },
-  zipCode: { type: String }
+  zipCode: { type: String },
+  isPremiumUser: { type: Boolean, default: false },
+  recipeCount: { type: Number, default: 0 },
+  earnings: { type: Number, default: 0 }
 }, { versionKey: false });
 
 module.exports = mongoose.model('User', UserSchema);

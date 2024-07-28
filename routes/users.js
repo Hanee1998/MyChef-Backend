@@ -10,11 +10,13 @@ router.put('/:email', updateUser);
 
 router.get('/:email', async (req, res) => {
   try {
+    console.log(req.params.email)
     const user = await User.findOne({ email: req.params.email });
     res.json(user);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
 });
+
 
 module.exports = router;
