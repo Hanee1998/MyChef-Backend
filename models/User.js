@@ -12,7 +12,9 @@ const UserSchema = new mongoose.Schema({
   zipCode: { type: String },
   isPremiumUser: { type: Boolean, default: false },
   recipeCount: { type: Number, default: 0 },
-  earnings: { type: Number, default: 0 }
+  earnings: { type: Number, default: 0 },
+  isAdmin:{type:Boolean,default:false},
+  savedRecipes: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Recipe' }] // Add this line
 }, { versionKey: false });
 
 module.exports = mongoose.model('User', UserSchema);

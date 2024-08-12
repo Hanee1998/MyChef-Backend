@@ -48,6 +48,10 @@ const recipeSchema = new mongoose.Schema({
     likedBy: {
         type: [String],
         default: []
+    },
+    image: {
+        type: String, // Store image as a Base64 string
+        default: ''
     }
 });
 
